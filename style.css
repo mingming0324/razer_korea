@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+/* 노말라이즈 */
+body,
+ul,
+li,
+h1, h2, h3, h4,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ /* 노말라이즈 끝 */
+
+ /* 라이브러리 */
+.border-red {
+  border: 1px solid red;
+}
+
+.border-blue {
+  border: 1px solid blue;
+}
+
+.border-black {
+  border: 1px solid #000;
+}
+
+.border-green {
+  border: 1px solid green;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.con {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1920px;
+}
+
+.img-box>img {
+  width: 100%;
+  display: block;
+}
+ /* 라이브러리 끝 */
+
+ /* 커스텀 */
+html {
+  font-family: 'Pretendard-Regular';
+}
+
+/* <!-- 상단바 시작 --> */
+/* <!-- 상단바 끝 --> */
+
+/* <!-- 메인 시작 --> */
+/* <!-- 메인 끝 --> */
+
+/* <!-- 신규 제품 시작 --> */
+/* <!-- 신규 제품 끝 --> */
+
+/* <!-- 조명 소개 시작 --> */
+/* <!-- 조면 소개 끝 --> */
+
+/* <!-- 베스트 제품 시작 --> */
+/* <!-- 베스트 제품 끝 --> */
+
+/* <!-- 콜라보레이션 시작 --> */
+/* <!-- 콜라보레이션 끝 --> */
+
+/* <!-- 구독 시작 --> */
+/* <!-- 구독 끝 --> */
+
+/* <!-- 어플 시작 --> */
+/* <!-- 어플 끝 --> */
+
+/* <!-- 푸터 시작 --> */
+/* <!-- 푸터 끝 --> */
