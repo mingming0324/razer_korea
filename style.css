@@ -69,7 +69,7 @@ html {
 
 /* <!-- 메인 시작 --> */
 .main {
-
+  position: relative;
 }
 /* <!-- 메인 끝 --> */
 
