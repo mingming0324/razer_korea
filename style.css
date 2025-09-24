@@ -60,6 +60,13 @@
   font-weight: 900;
   font-display: swap;
 }
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* 노말라이즈 */
 body,
 ul,
@@ -119,6 +126,9 @@ a {
 html {
   font-family: 'Pretendard-Regular';
 }
+html body {
+  background-color: #000;
+}
 
 /* <!-- 상단바 시작 --> */
 /* <!-- 상단바 끝 --> */
@@ -177,6 +187,50 @@ html {
 /* <!-- 메인 끝 --> */
 
 /* <!-- 신규 제품 시작 --> */
+.sec-1 {
+  height: 1080px;
+  padding: 86px 198px;
+  box-sizing: border-box;
+}
+.sec-1_warp {
+  flex-direction: column;
+  height: 100%;
+}
+
+.item_text-box {
+  color: #fff;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.item_text-box h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 128px;
+}
+
+.item_text-box span {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+/* 비활성 점 색상 */
+.swiper-pagination-bullet {
+  background: #535353; /* 원하는 색상 */
+  opacity: 1;       /* 기본은 0.2 정도라 안 보일 수 있음 */
+}
+
+/* 활성 점 색상 */
+.swiper-pagination-bullet-active {
+  background: #46FF68; /* 원하는 색상 */
+}
+
+.swiper-pagination {
+  top: 50%;
+  transform: translateY(-50%);
+  flex-direction: column;
+  left: 0;
+}
 /* <!-- 신규 제품 끝 --> */
 
 /* <!-- 조명 소개 시작 --> */
