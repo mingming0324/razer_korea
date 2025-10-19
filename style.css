@@ -61,8 +61,37 @@
   font-display: swap;
 }
 
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+.dynapuff-bold {
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700; /* 숫자 값으로 변경 */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.bagel-fat-one-regular {
+  font-family: "Bagel Fat One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.luckiest-guy-regular {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -113,10 +142,11 @@ a {
 .con {
   margin-left: auto;
   margin-right: auto;
-  width: 1920px;
+  max-width: 1920px;
+  width: 100%;
 }
 
-.img-box>img {
+img {
   width: 100%;
   display: block;
 }
@@ -131,6 +161,52 @@ html body {
 }
 
 /* <!-- 상단바 시작 --> */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: rgba(0, 0, 0, .67);
+  z-index: 100;
+  color: #fff;
+  transition: transform .4s ease-in-out, opacity .4s ease-in-out;
+  opacity: 1;
+}
+.top-bar_wrap {
+  padding: 14px 150px;
+  justify-content: space-between;
+}
+
+.logo-menu-box {
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-menu-box .top-menu {
+  gap: 50px;
+}
+
+.logo-menu-box .top-menu li {
+  font-size: 26px;
+  letter-spacing: -.5px;
+  font-family: "Bebas Neue", sans-serif;
+  transition: color .3s;
+}
+
+.logo-menu-box .top-menu li:hover {
+  color: #29A33F;
+  text-decoration: underline;
+}
+
+.hamberger {
+  cursor: pointer;
+}
+
+.hide-header {
+  opacity: 0;
+}
 /* <!-- 상단바 끝 --> */
 
 /* <!-- 메인 시작 --> */
@@ -145,8 +221,10 @@ html body {
 }
 
 .main-box {
+  width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .main_text-box {
@@ -184,13 +262,19 @@ html body {
   background-color: #000;
   border-radius: 50px;
 }
+
+.main-box .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
 /* <!-- 메인 끝 --> */
 
 /* <!-- 신규 제품 시작 --> */
 .sec-1 {
-  height: 1080px;
   padding: 86px 198px;
   box-sizing: border-box;
+  overflow: hidden;
+  height: 100vh;
 }
 .sec-1_warp {
   flex-direction: column;
@@ -214,6 +298,17 @@ html body {
   font-weight: 500;
 }
 
+.item_sub-text-box {
+  justify-content: center;
+  margin-top: 58px;
+}
+
+.item_sub-text-box span {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
 /* 비활성 점 색상 */
 .swiper-pagination-bullet {
   background: #535353; /* 원하는 색상 */
@@ -234,19 +329,525 @@ html body {
 /* <!-- 신규 제품 끝 --> */
 
 /* <!-- 조명 소개 시작 --> */
+.sec-2 {
+  background-image: url(./imgs/sec-2_back-img.png);
+}
+.sec-2_wrap {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 218px 308px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sec-2_rgb-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 4px;
+  animation: moveRGB 3s linear infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(221, 23, 229, 0) 0%,     /* #DD17E5 0% 투명 */
+    rgba(19, 68, 226, 0.3) 16%,   /* #1344E2 30% */
+    rgba(24, 246, 229, 0.5) 32%,  /* #18F6E5 50% */
+    rgba(10, 249, 10, 1) 48%,     /* #0AF90A 100% */
+    rgba(245, 227, 7, 0.5) 64%,   /* #F5E307 50% */
+    rgba(244, 98, 5, 0.3) 80%,    /* #F46205 30% */
+    rgba(233, 12, 11, 0) 100%     /* #E90C0B 0% */
+  );
+  background-size: 200% 100%; /* ✅ 배경 크기 확장 */
+  background-repeat: repeat-x; /* ✅ 가로 반복 허용 */
+}
+
+@keyframes moveRGB {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
+}
+
+.sec-2_item-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  background-color: #000113;
+  width: 1300px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 42px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sec-2_item-box1 {
+  z-index: 2; /* 위쪽 */
+}
+
+.sec-2_item-box2 {
+  position: absolute;
+  top: 218px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0; /* 처음엔 숨김 */
+}
+
+.sec-2_item-box .sec-2_text-box {
+  color: #fff;
+  width: 1218px;
+  padding: 62px 34px;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 14px;
+  /* border: 2px solid #46FF68; */
+}
+
+.sec-2_item-box1 .sec-2_text-box1 {
+  position: absolute;
+  bottom: 10px;
+  border: 1px solid #46FF68;
+}
+
+.sec-2_item-box1 .sec-2_text-box1::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top, right, bottom, left: 0 */
+  background: url(./imgs/sec-2_back-img2.png); /* 배경 그대로 복사 */
+  opacity: 0.4; /* 투명도 조절 */
+  z-index: 0;
+  filter: blur(4px); /* 블러 강도 (px 단위) */
+}
+
+.sec-2_item-box2 .sec-2_text-box2 {
+  position: absolute;
+  border: 1px solid #FF98EC;
+  bottom: 100px;
+  height: 248px;
+}
+
+.sec-2_item-box2 .sec-2_text-box2::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top, right, bottom, left: 0 */
+  background: url(./imgs/sec-2_back-img3.png); /* 배경 그대로 복사 */
+  opacity: 0.4; /* 투명도 조절 */
+  z-index: 0;
+  filter: blur(4px); /* 블러 강도 (px 단위) */
+}
+
+.sec-2_item-box .sec-2_img-box1 {
+  width: 588px;
+  margin-bottom: 196px;
+}
+
+.sec-2_item-box .sec-2_img-box2 {
+  width: 1138px;
+  margin-bottom: 276px;
+}
+
+.sec-2_item-box .sec-2_text-box h1 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.sec-2_item-box .sec-2_text-box p {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -.5px;
+  line-height: 28.8px;
+  text-align: justify;
+}
+
 /* <!-- 조면 소개 끝 --> */
 
 /* <!-- 베스트 제품 시작 --> */
+.sec-3 {
+  box-sizing: border-box;
+  padding: 88px 140px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.6s ease; /* 부드럽게 전환 */
+}
+
+.sec-3_wrap {
+  position: relative;
+}
+
+.sec-3_slide-box {
+  width: 100%;
+  max-width: 984px;   /* 이미지 실제 폭 */
+  margin: 0 auto;     /* 화면 중앙 정렬 */
+  position: relative;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 124px;        /* 원하는 크기 */
+  height: 656px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+
+.swiper-button-next {
+  background-image: url(./imgs/sec-3_btn-right.png);
+  top: 80px;
+}
+
+.swiper-button-prev {
+  background-image: url(./imgs/sec-3_btn-left.png);
+  top: 80px;
+}
+
+.sec-3-item-box li {
+  color: #fff;
+  text-align: center;
+  height: 780px;
+}
+
+.sec-3-item-box li span {
+  display: block;
+  font-size: 40px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 28px;
+}
+
+.sec-3_slide-box .swiper-pagination {
+  position: absolute;
+  bottom: -16px;
+}
 /* <!-- 베스트 제품 끝 --> */
 
 /* <!-- 콜라보레이션 시작 --> */
+.collab-warp {
+  position: relative;
+  width: 100%;
+  height: 970px;       /* 전체 높이 (원하는 대로 조절 가능) */
+  background: #000;  
+  overflow: hidden;   /* 배경 기본색 */
+}
+
+/* 이미지 래퍼 */
+.collab-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 각각의 이미지 (배경으로 지정) */
+.img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  /* transform: translateY(100%); */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* 현재 보이는 이미지 */
+.img.active {
+  /* transform: translateY(0); */
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 탭(텍스트) 영역 */
+.tabs {
+  position: absolute;
+  top: 48%;       /* 아래 여백 */
+  transform: translateY(calc(-50% + var(--shift, 0px))); 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;       /* 가로 중앙 정렬 */
+  gap:118px;                /* 항목 간 간격 */ 
+  z-index: 10;
+  color: #4E4E4E;
+  font-size: 96px;
+  transition: color 0.3s, transform 0.6s ease;
+}
+
+.tabs .BATTLEGROUND {
+  cursor: pointer;
+}
+
+.tabs .DOLCE {
+  font-family: 'Futura Std', sans-serif;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+.tabs .KITTY {
+  font-family: "DynaPuff", system-ui;
+  font-weight: 700;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+.tabs .KUROMI {
+  font-family: "Bagel Fat One", system-ui;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+.tabs .MINECRAFT {
+  font-family: "Luckiest Guy", cursive;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+/* 활성 효과 */
+.tabs .DOLCE.active {
+  color: #AC9240;
+}
+.tabs .KITTY.active {
+  color: #F9A2B8;
+}
+.tabs .KUROMI.active {
+  color: #CBAEEF;
+}
+.tabs .MINECRAFT.active {
+  color: #59F35A;
+}
+.tabs .BATTLEGROUND {
+  width: 560px;
+  height: 108px;
+  background: url('./imgs/BATTLEGROUND-gray.png') center/contain no-repeat;
+  transition: all .3s;
+}
+
+.tabs .BATTLEGROUND.active {
+  background-image: url('./imgs/BATTLEGROUND-yellow.png');
+}
+
 /* <!-- 콜라보레이션 끝 --> */
 
 /* <!-- 구독 시작 --> */
+.sec-5_wrap {
+  height: 1013px;
+  background: url(./imgs/sec-5_back-img.png);
+  position: relative;
+}
+
+.sec-5_text-box {
+  position: absolute;
+  color: #fff;
+  flex-direction: column;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  gap: 12px;
+}
+
+.sec-5_text-box h1 {
+  font-size: 186px;
+  font-family: "Anton", sans-serif;
+}
+
+.sec-5_text-box span {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.sec-5_text-box .sec-5_btn-box {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+/* .sec-5_text-box .sec-5_btn-box button {
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #000;
+  opacity: .5;
+  filter: blur(2px);
+  color: #fff;
+} */
+
+.sec-5_text-box .sec-5_btn-box span {
+  opacity: 2;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sec-5_text-box .sec-5_btn-box span::after {
+  position: absolute;
+  content: "";
+  width: 140px;
+  height: 50px;
+  background-color: #fff;
+  opacity: .3;
+  left: 50%;
+  top: 50%;
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+  filter: blur(1px);
+  z-index: -1;
+  border: 1px solid green;
+  cursor: pointer;
+}
+
+.sec-5_text-box .sec-5_btn-box span:hover  {
+  text-decoration: underline;
+}
+
+.sec-5_text-box .sec-5_btn-box span::after:hover span  {
+  text-decoration: underline;
+}
 /* <!-- 구독 끝 --> */
 
 /* <!-- 어플 시작 --> */
+.sec-6 {
+  position: relative;
+}
+
+.sec-6_back-img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.sec-6_wrap {
+  padding: 146px 478px;
+}
+
+.sec-6_icon-box {
+  gap: 80px;
+}
+
+.sec-6_icon-box .sec-6_icon {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec-6_icon-box .sec-6_icon span {
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  font-family: "Bebas Neue", sans-serif;
+  transition: color .3s;
+}
+
+
+
+.sec-6_icon span:hover {
+  color: #29A33F;
+}
 /* <!-- 어플 끝 --> */
 
 /* <!-- 푸터 시작 --> */
+.ft-0 {
+  color: #fff;
+}
+
+.ft_wrap {
+  padding: 92px 96px;
+  justify-content: space-between;
+}
+
+.ft-text_wrap {
+gap: 133px;
+flex-direction: column;
+}
+
+.ft-text_wrap .ft_game-text {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ft-text_wrap .ft_game-text .game {
+  font-size: 20px;
+  color: #46FF68;
+  font-family: "ISOCP2";
+}
+
+.ft-text_wrap .ft_game-text .game .tm {
+  color: #464646;
+}
+
+.ft-text_wrap .ft_game-text .ft-menu {
+  gap: 12px;
+}
+
+.ft-text_wrap .ft_game-text .ft-menu_item {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.ft-text_wrap .ft_game-text .ft-menu_item span:hover {
+  font-weight: 500;
+  color: #29A33F;
+}
+
+.ft-text_wrap .ft_copy {
+  gap: 74px;
+}
+
+.ft-text_wrap .ft_copy .copy {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.ft-text_wrap .ft_copy .ft-cookie {
+  gap: 14px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.ft-text_wrap .ft_copy .ft-cookie span:hover {
+  font-weight: 500;
+  color: #29A33F;
+}
+
+.ft_right {
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 98px;
+}
+
+.ft_right .ft_sns {
+  flex-direction: column;
+}
+
+.ft_right .ft_sns .ft_sns-title {
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: right;
+  margin-right: 6px;
+}
+
+.ft_right .ft_sns .ft-sns-box {
+  justify-content: right;
+}
+
+.ft_right .ft_location {
+  font-size: 20px;
+  gap: 4px;
+}
+
+.ft_right .ft_location .location {
+  color: #464646;
+  cursor: pointer;
+}
 /* <!-- 푸터 끝 --> */

@@ -6,6 +6,10 @@
   <title>RAZER KOREA</title>
   <!-- JQ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- GSAP-SCROLL -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <!-- 스와이프 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -13,12 +17,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/3fc60f9f88b2e3eb3227278569c7cc5a?family=ISOCP2" rel="stylesheet" type="text/css"/>
 
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 </head>
 <body>
   <!-- 상단바 시작 -->
+  <header class="top-bar con">
+    <div class="top-bar_wrap flex">
+      <div class="logo-menu-box flex">
+        <div class="logo-box">
+          <img src="./imgs/top-logo.png" alt="">
+        </div>
+        <ul class="top-menu flex">
+          <li><a href="#">PC</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Life Style</a></li>
+          <li><a href="#">Customizing</a></li>
+          <li><a href="#"> Gold/Silver</a></li>
+        </ul>
+      </div>
+
+      <!-- <div class="hamberger">
+        <img src="./imgs/hamberger.png" alt="">
+      </div> -->
+    </div>
+  </header>
   <!-- 상단바 끝 -->
 
   <!-- 메인 시작 -->
@@ -38,13 +68,13 @@
                   <span>Buy ></span>
                 </div>
               </div>
-              <img src="./imgs/main_img2.png" alt=""></a>
+              <img src="./imgs/main_img3.png" alt=""></a>
             </div>
             <div class="swiper-slide img-box"><a href="">
               <div class="main_text-box flex">
                 <div class="main-title">
-                  <h1>HUNTSMAN V3 PRO</h1>
-                  <span>입력 그 이상, 전략을 설계하다.</span>
+                  <h1>BLACKWIDOW V4 PRO</h1>
+                  <span>키보드 그 이상, 컨트롤을 완성하다.</span>
                 </div>
 
                 <div class="main-btn btn flex">
@@ -52,13 +82,13 @@
                   <span>Buy ></span>
                 </div>
               </div>
-              <img src="./imgs/main_img3.png" alt=""></a>
+              <img src="./imgs/main_img2.png" alt=""></a>
             </div>
             <div class="swiper-slide img-box"><a href="">
               <div class="main_text-box flex">
                 <div class="main-title">
-                  <h1>HUNTSMAN V3 PRO</h1>
-                  <span>입력 그 이상, 전략을 설계하다.</span>
+                  <h1>OPTICAL SWITCH</h1>
+                  <span>스위치 그 이상, 플레이를 제어하다.</span>
                 </div>
 
                 <div class="main-btn btn flex">
@@ -89,16 +119,24 @@
 
                 <img src="./imgs/sec-1_img2.png" alt="">
               </a>
+
+              <div class="item_sub-text-box flex">
+                <span>새로운 차원의 성능, RTX 5070</span>
+              </div>
             </div>
             <div class="swiper-slide">
+              
+              <div class="item_text-box flex">
+                <h1>RAZER BLADE 16</h1>
+                <span>두 세계를 넘나드는 디스플레이</span>
+              </div>
               <a href="#">
-                <img src="" alt="">
+                <img src="./imgs/sec-1_img3.png" alt="">
               </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <img src="" alt="">
-              </a>
+
+              <div class="item_sub-text-box flex">
+                <span>더 슬림하게. 더 스마트하게. 더 선명하게</span>
+              </div>
             </div>
           </div>
           <div class="swiper-pagination flex"></div>
@@ -108,27 +146,178 @@
   <!-- 신규 제품 끝 -->
 
   <!-- 조명 소개 시작 -->
-    <section class="sec-2 con"></section>
+    <section class="sec-2 con">
+      <div class="sec-2_wrap flex">
+        <div class="sec-2_rgb-line"></div>
+
+        <div class="sec-2_item-box sec-2_item-box1 flex">
+          <div class="sec-2_img-box sec-2_img-box1 flex">
+            <img src="./imgs/sec-2_img1.png" alt="">
+          </div>
+
+          <div class="sec-2_text-box sec-2_text-box1 flex">
+            <h1> Razer Chroma RGB</h1>
+            <p>Razer Chroma RGB는 전 세계 1억 명 이상의 게이머가 선택한 유일한 통합 RGB 조명 시스템입니다. 하나의 소프트웨어, 하나의 생태계로 PC부터 조명 스트립과 외부 하드웨어까지 모두를 연결해 완벽하게 일관된 몰입감을 선사합니다. 게임 연동 조명으로 눈앞의 승부가 조명으로 살아나고, Chroma Studio를 통해 나만의 조명 디자인을 만들어 나만의 배틀스테이션을 완성할 수 있습니다. 1,680만 가지 컬러, 무한한 커스터마이징 그리고 단 하나의 조화. 모든 장비가, 하나처럼 반응합니다. 이것이 진짜 Razer입니다.</p>
+          </div>
+        </div>
+
+        <div class="sec-2_item-box sec-2_item-box2 flex">
+          <div class="sec-2_img-box sec-2_img-box2 flex">
+            <img src="./imgs/sec-2_img2.png" alt="">
+          </div>
+
+          <div class="sec-2_text-box sec-2_text-box2 flex">
+            <h1>Razer Chroma Addressable RGB Controller</h1>
+            <p>최대 240개의 ARGB LED를 제어할 수 있는 고성능 조명 컨트롤러로, Razer Synapse와 연동되어 조명 스트립, 팬, 워터블록 등 다양한 하드웨어를 하나의 생태계로 통합합니다. 6개의 포트를 통해 디바이스를 세밀하게 제어할 수 있으며, Chroma Studio를 활용해 1,680만 가지 컬러와 무한한 커스터마이징으로 나만의 조명 연출이 가능합니다. 게임 연동 조명은 몰입감을 극대화하고, 모든 장비가 하나처럼 반응하는 완벽한 RGB 일체감을 경험할 수 있습니다. 이것이 바로 진정한 Razer Chroma RGB의 확장입니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   <!-- 조면 소개 끝 -->
 
   <!-- 베스트 제품 시작 -->
-    <section class="sec-3 con"></section>
+    <section class="sec-3 con">
+      <div class="sec-3_wrap flex">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <div class="sec-3_slide-box swiper mySwiper-2">
+          <ul class="sec-3-item-box swiper-wrapper">
+            <li class="swiper-slide" data-bg="imgs/sec-3_back-img1.png">
+              <span>RAZER KRAKEN V4</span>
+              <a href="#"><img src="./imgs/sec-3_img1.png" alt=""></a>
+            </li>
+            <li class="swiper-slide" data-bg="imgs/sec-3_back-img2.png">
+              <span>RAZER BLACKSHARK V3</span>
+              <a href="#"><img src="./imgs/sec-3_img2.png" alt=""></a>
+            </li>
+            <li class="swiper-slide" data-bg="imgs/sec-3_back-img3.png">
+              <span>RAZER KRAKEN KITTY V2</span>
+              <a href="#"><img src="./imgs/sec-3_img3.png" alt=""></a>
+            </li>
+            <li class="swiper-slide" data-bg="imgs/sec-3_back-img4.png">
+              <span>RAZER LEVIATHAN V2 X</span>
+              <a href="#"><img src="./imgs/sec-3_img4.png" alt=""></a>
+            </li>
+            <li class="swiper-slide" data-bg="imgs/sec-3_back-img5.png">
+              <span>RAZER NOMMO V2</span>
+              <a href="#"><img src="./imgs/sec-3_img5.png" alt=""></a>
+            </li>
+          </ul>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
   <!-- 베스트 제품 끝 -->
 
   <!-- 콜라보레이션 시작 -->
-    <section class="sec-4 con"></section>
+    <section class="sec-4 con">
+      <div class="sec-4_wrap">
+        <div class="collab-warp">
+          <div class="collab-img">
+            <div class="img active" style="background-image:url('./imgs/sec-4_img1.png')"></div>
+            <div class="img" style="background-image:url('./imgs/sec-4_img2.png')"></div>
+            <div class="img" style="background-image:url('./imgs/sec-4_img3.png')"></div>
+            <div class="img" style="background-image:url('./imgs/sec-4_img4.png')"></div>
+            <div class="img" style="background-image:url('./imgs/sec-4_img5.png')"></div>
+          </div>
+        
+          <div class="tabs">
+            <label class="KUROMI" data-idx="3">KUROMI</label>
+            <label class="MINECRAFT" data-idx="4">MINECRAFT</label>
+            <label class="DOLCE" data-idx="0">DOLCE & GABBANA</label>
+            <label class="BATTLEGROUND" data-idx="1"></label>
+            <label class="KITTY" data-idx="2">HELLO KITTY</label>
+          </div>
+        </div>
+      </div>
+    </section>
   <!-- 콜라보레이션 끝 -->
 
   <!-- 구독 시작 -->
-    <section class="sec-5 con"></section>
+    <section class="sec-5 con">
+      <div class="sec-5_wrap">
+        <div class="sec-5_text-box flex">
+          <h1>RAZER GOLD</h1>
+          <span>Razer가 만든 지갑 혁명</span>
+          <div class="sec-5_btn-box flex">
+            <span>바로가기</span>
+          </div>
+        </div>
+      </div>
+    </section>
   <!-- 구독 끝 -->
 
   <!-- 어플 시작 -->
-    <section class="sec-6 con"></section>
+    <section class="sec-6 con">
+      <div class="sec-6_back-img">
+        <img src="./imgs/sec-6_back-img.png" alt="">
+      </div>
+      <div class="sec-6_wrap flex">
+        <ul class="sec-6_icon-box flex">
+          <li class="sec-6_icon flex">
+            <a href="#"><img src="./imgs/icon4.png" alt=""></a>
+          <a href="#"><span>Razer Synapse</span></a>
+        </li>
+          <li class="sec-6_icon flex">
+            <a href="#"><img src="./imgs/icon3.png" alt=""></a>
+          <a href="#"><span>Razer Chroma RGB</span></a>
+        </li>
+          <li class="sec-6_icon flex">
+            <a href="#"><img src="./imgs/icon2.png" alt=""></a>
+          <a href="#"><span>THX + 7.1 Audio</span></a>
+        </li>
+          <li class="sec-6_icon flex">
+            <a href="#"><img src="./imgs/icon1.png" alt=""></a>
+          <a href="#"><span>Razer Cortex</span></a>
+        </li>
+        </ul>
+      </div>
+    </section>
   <!-- 어플 끝 -->
 
   <!-- 푸터 시작 -->
-    <footer class="ft-0"></footer>
+    <footer class="ft-0 con">
+      <div class="ft_wrap flex">
+        <div class="ft-text_wrap flex">
+          <div class="ft_game-text flex">
+            <span class="game">FOR GAMERS. BY GAMERS. <span class="tm">™</span></span>
+            <ul class="ft-menu flex">
+              <li class="ft-menu_1 ft-menu_item"><a href="#"><span>Shopping</span></a></li>
+              <li class="ft-menu_2 ft-menu_item"><a href="#"><span>Browsing</span></a></li>
+              <li class="ft-menu_3 ft-menu_item"><a href="#"><span>Support</span></a></li>
+              <li class="ft-menu_4 ft-menu_item"><a href="#"><span>Company</span></a></li>
+            </ul>
+          </div>
+          <div class="ft_copy flex">
+            <span class="copy">Copyright © 2025 Razer Inc. All rights reserved.</span>
+            <ul class="ft-cookie flex">
+              <li class="cookie"><a href="#"><span>법적 약관</span></a></li>
+              |
+              <li class="cookie"><a href="#"><span>개인정보 보호정책</span></a></li>
+              |
+              <li class="cookie"><a href="#"><span>쿠키 설정</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ft_right flex">
+          <div class="ft_sns flex">
+            <span class="ft_sns-title">Razer Follow</span>
+            <ul class="ft-sns-box flex">
+              <li class="ft-sns_icon"><a href="#"><img src="./imgs/sns4.png" alt=""></a></li>
+              <li class="ft-sns_icon"><a href="#"><img src="./imgs/sns3.png" alt=""></a></li>
+              <li class="ft-sns_icon"><a href="#"><img src="./imgs/sns2.png" alt=""></a></li>
+              <li class="ft-sns_icon"><a href="#"><img src="./imgs/sns1.png" alt=""></a></li>
+            </ul>
+          </div>
+          <div class="ft_location">
+            <span class="korea">대한민국 |<span class="location"> Change Location ></span></span>
+          </div>
+        </div>
+      </div>
+    </footer>
   <!-- 푸터 끝 -->
 </body>
 </html>
