@@ -212,7 +212,9 @@ html body {
 /* <!-- 메인 시작 --> */
 .main {
   position: relative;
-  height: 950px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .main_wrap {
@@ -236,6 +238,7 @@ html body {
   text-align: right;
   padding: 50px;
   gap: 100px;
+  z-index: 2;
 }
 
 .main_text-box .main-title h1 {
@@ -266,6 +269,12 @@ html body {
 .main-box .swiper-slide {
   width: 100%;
   height: 100%;
+}
+
+.main-box .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* <!-- 메인 끝 --> */
 
